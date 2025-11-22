@@ -95,5 +95,22 @@ public class MaestroElemental {
     public Criatura getCriatura(String nombre) {
         return criaturas.get(nombre);
     }
+
+     public void transformarCriatura(String nombreCriatura, Transformacion transformacion) {
+        Criatura criatura = criaturas.get(nombreCriatura);
+        
+        if (criatura == null) {
+            throw new IllegalArgumentException("La criatura no está a cargo de este maestro");
+        }
+        
+        if (transformacion == null) {
+            throw new IllegalArgumentException("La transformación no puede ser nula");
+        }
+
+        CriaturaTransformada criaturaTransformada = 
+            new CriaturaTransformada(criatura, transformacion);
+        
+        criaturas.put(nombreCriatura, criaturaTransformada);
+    } 
 }
 

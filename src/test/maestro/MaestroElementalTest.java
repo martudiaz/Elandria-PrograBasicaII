@@ -12,6 +12,8 @@ import criatura.ComportamientoEmocional;
 import criatura.Criatura;
 import criatura.CriaturaDomesticada;
 import excepcion.MaestriaInsuficienteException;
+import transformacion.BendicionDelRio;
+import transformacion.CriaturaTransformada;
 
 public class MaestroElementalTest {
     
@@ -70,6 +72,15 @@ public class MaestroElementalTest {
         maestro.pacificarCriatura("Inestable");
         
         assertFalse(criaturaInestable.esInestable());
+    }
+
+    @Test
+    public void testTransformarCriatura() {
+        maestro.agregarCriatura(criatura);
+        maestro.transformarCriatura("Dragón", new BendicionDelRio());
+        
+        Criatura criaturaTransformada = maestro.getCriatura("Dragón");
+        assertTrue(criaturaTransformada instanceof CriaturaTransformada);
     }
 }
 
