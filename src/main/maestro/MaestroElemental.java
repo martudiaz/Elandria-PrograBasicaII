@@ -6,6 +6,8 @@ import java.util.Map;
 import criatura.AfinidadElemental;
 import criatura.Criatura;
 import excepcion.MaestriaInsuficienteException;
+import transformacion.CriaturaTransformada;
+import transformacion.Transformacion;
 
 public class MaestroElemental {
     private String nombre;
