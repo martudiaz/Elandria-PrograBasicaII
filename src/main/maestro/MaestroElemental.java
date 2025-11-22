@@ -111,6 +111,17 @@ public class MaestroElemental {
             new CriaturaTransformada(criatura, transformacion);
         
         criaturas.put(nombreCriatura, criaturaTransformada);
-    } 
+    }
+     
+     public int contarCriaturasTransformadas() {
+    	 int cant = 0;
+    	 for (Criatura criatura : criaturas.values()) {
+    		 if(criatura instanceof CriaturaTransformada) {
+    			 cant++;
+    		 }
+    	 }
+    	 
+    	 return cant;
+     }
 }
 

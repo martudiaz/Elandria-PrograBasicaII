@@ -82,5 +82,16 @@ public class MaestroElementalTest {
         Criatura criaturaTransformada = maestro.getCriatura("Dragón");
         assertTrue(criaturaTransformada instanceof CriaturaTransformada);
     }
+    
+    @Test
+    public void testContarCriaturasTransformadas() {
+        maestro.agregarCriatura(criatura);
+        assertEquals(0, maestro.contarCriaturasTransformadas());
+        
+        
+        maestro.transformarCriatura("Dragón", new BendicionDelRio());
+        assertEquals(1, maestro.contarCriaturasTransformadas());
+
+    }
 }
 
